@@ -1,0 +1,39 @@
+<html>
+    <head>
+       <title>
+        Studies for validation a simple login form
+       </title> 
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" type="text/css" href="./FormValidation.textarea.styles.css">
+       
+    </head>
+    <body>
+        <h1 class="loginTitle">
+            Text area validation
+        </h1>
+        <main>
+            <textarea class="textArea" id="textMsg" cols="50" rows="10" maxlength="100"></textarea>
+            <p style="text-align:center;">Restam <span id="rest"></span> caracteres</p>
+        </main>
+
+        <script >
+            (() => {
+                'use strict'
+                const textArea = document.getElementById('textMsg');
+                const count = document.getElementById('rest');
+                const  max = textArea.maxLength;
+                rest.textContent = max;
+
+                function checkLength(e) {
+                    const inputLength = this.value?.length;
+                    console.log('input', inputLength);
+                    rest.textContent = max - inputLength;
+                }
+    
+                textArea.addEventListener('input', checkLength);
+            })();
+           </script>
+        
+    </body>
+</html>
