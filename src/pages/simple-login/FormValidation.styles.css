@@ -8,16 +8,20 @@
 .loginForm {
     display: inline-block;
     margin: 0 40%;
-    text-align: right;
     padding: 12px 0;
+    text-align: center;
 }
 
-.loginUser {
-    display: inline-block;
+.loginLabel {
+    display: flex;
+    justify-content: space-between;
     padding-bottom: 6px;
 }
 
-.loginPass {
-    display: flex;
-    justify-content: space-between;
+.loginInput {
+    margin-left: 6px;
+}
+
+.loginButton {
+    margin-top: 6px;
 }

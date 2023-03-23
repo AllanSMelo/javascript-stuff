@@ -1,0 +1,42 @@
+<html>
+    <head>
+       <title>
+        Studies for validation a simple login form
+       </title> 
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" type="text/css" href="./FormValidation.styles.css">
+       
+    </head>
+    <body>
+        <h1 class="loginTitle">
+            Tela de login simples
+        </h1>
+        <main>
+            <form class="loginForm" action="#">
+                <label class="loginLabel" for="user">Usuário <input class="loginInput" type="text" name="user" id="login"></label>
+                <label class="loginLabel" for="pwd">Senha <input class="loginInput" type="password" name="pwd" id="pwd"></label>
+                <!-- <input class="loginButton" type="submit" value="Login" onclick="isFormValid"> -->
+                <button class="loginButton" type="button" id="btn">Login</button>
+            </form>
+        </main>
+
+        <script >
+            (() => {
+                'use strict'
+                const user = document.getElementById('login');
+                const pwd = document.getElementById('pwd');
+                const btn = document.getElementById('btn');
+
+                const validateForm = () => {
+                    if(!user.value || !pwd.value) {
+                        alert('Preencha todos os campos');
+                    }
+                }
+    
+                btn.addEventListener('click', validateForm);
+            })();
+           </script>
+        
+    </body>
+</html>
