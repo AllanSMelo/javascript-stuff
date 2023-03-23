@@ -1,0 +1,38 @@
+<html>
+    <head>
+       <title>
+        Studies for validation a simple login form
+       </title> 
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+    <body>
+        <main>
+            <h1 >
+                Contract validation
+            </h1>
+            <button>Botao 1</button>
+            <button>Botao 2</button>
+            <button>Botao 3</button>
+            
+           
+        </main>
+
+        <script>
+            (function (){
+                "use strict";
+                const buttons = document.getElementsByTagName('button');
+
+                for(let i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener('click', handleClick);
+                }
+
+                function handleClick() {
+                    console.log(this.textContent)
+                }
+            })();
+        </script>
+        
+    </body>
+</html>

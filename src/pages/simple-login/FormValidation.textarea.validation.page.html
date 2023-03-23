@@ -1,0 +1,43 @@
+<html>
+    <head>
+       <title>
+        Studies for validation a simple login form
+       </title> 
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+    <body>
+        <h1 >
+            Contract validation
+        </h1>
+        <main>
+            <form action="#">
+                <textarea cols="50" rows="10" readonly>Contrato de serviço
+                </textarea>
+                <label style="display: block;">
+                    <input type="checkbox" id="acceptButton"> Li e aceito o contrato
+                </label>
+                <input type="submit" value="Continuar" id="sendButton" >
+            </form>
+           
+        </main>
+
+        <script>
+            (function (){
+                "use strict";
+                const sendButton = document.getElementById('sendButton');
+                const acceptButton = document.getElementById('acceptButton');
+
+                toggleBtn();
+
+                acceptButton.addEventListener('change', toggleBtn);
+
+                function toggleBtn() {
+                    sendButton.disabled = !acceptButton.checked;
+                };
+            })();
+        </script>
+        
+    </body>
+</html>
