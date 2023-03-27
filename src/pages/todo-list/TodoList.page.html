@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="./TodoList.stayles.css">
+    </head>
+    <body>
+        <main>
+            <h1>Lista de afazeres domésticos</h1>
+
+            <input type="text" name="workItem" id="workInput">
+            <button id="addWorkBtn" >Adicionar Tarefa</button>
+
+            <ul title="Afazeres a cumprir" id="todoList">
+                <li><label><input type="checkbox"> Lavar Louça</label> </li>
+                <li><label><input type="checkbox"> Varrer a casa</label> </li>
+                <li><label><input type="checkbox"> Varrer o quintal</label> </li>
+            </ul>
+
+        </main>
+
+        <script>
+            (function() {
+                "use strict"
+                const workInput = document.getElementById('workInput');
+                const addWorkBtn = document.getElementById('addWorkBtn');
+                const todoList = document.getElementById('todoList');
+                addWorkBtn.addEventListener('click', handleAddWork);
+
+                function handleAddWork() {
+                    const workItem = workInput.value;
+                    if(!!workItem) {
+                        //todoList.appendChild(createItemToList(workItem));
+                        createItemToList(workItem);
+                        workInput.value = null;
+                        workInput.focus();
+                    }
+                }
+
+                function createItemToList(workText) {
+                    //const textNode = document.createTextNode(workText);
+                    //const checkbox = document.createElement('input');
+                    //checkbox.setAttribute('Type', 'checkbox');
+                    //const label = document.createElement('label');
+                    //const itemList = document.createElement('li');
+                    //label.appendChild(checkbox);
+                    //label.appendChild(textNode);
+                    //itemList.appendChild(label);
+                    todoList.innerHTML += `<li><label><input type="checkbox"> ${workText} </label> </li>`;
+
+                    //return itemList;
+                }
+
+            })();
+        </script>
+    </body>
+</html>
